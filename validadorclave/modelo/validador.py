@@ -17,6 +17,15 @@ class ReglaValidacion(ABC):
         if not tiene_mayuscula:
             raise ValueError("La clave debe contener al menos una letra mayúscula")
 
+    def _contiene_minuscula(self, clave):
+        tiene_minuscula = False
+        for c in clave:
+            if c.islower():
+                tiene_minuscula = True
+                break
+        if not tiene_minuscula:
+            raise ValueError("La clave debe contener al menos una letra minuscula")
+
     @abstractmethod
     def es_valida(self, clave):
         pass
