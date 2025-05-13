@@ -25,6 +25,14 @@ class ReglaValidacion(ABC):
                 break
         if not tiene_minuscula:
             raise ValueError("La clave debe contener al menos una letra minuscula")
+    def _contiene_numero(self, clave):
+        tiene_numero = False
+        for n in clave:
+            if n.isdigit():
+                tiene_numero = True
+                break
+        if not tiene_numero:
+            raise ValueError("La clave debe contener al menos un número")
 
     @abstractmethod
     def es_valida(self, clave):
