@@ -94,3 +94,4 @@ class Validador:
         return self.regla.es_valida(clave)
 
 
+
